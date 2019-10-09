@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="mv">
+	{% if data %}
+			
+		<div id ="fm1" class="fm">
+			<img src={{data[7]|safe}} alt="Smiley face">
+		</div>
+
+		<div id ="fm2" class="fm">
+			<div>导演：{{data[0]|replace("(","")|replace(")","")|replace("'","")}}</div>
+			<div>评分：{{data[1]|replace("'","")}}</div>
+			<div>封面位置x：{{data[2]}}</div>
+			<div>星级：{{data[3]|replace("'","")}}</div>
+			<div>片名：{{data[4]|replace("'","")}}</div>
+			<div>详情请见：
+				<a href={{data[5]|safe}} target="_blank">豆瓣链接</a>
+			</div>
+			<div>主演：{{data[6]|replace("(","")|replace(")","")|replace("'","")}}</div>
+			<div>影片序号：{{data[8]|replace("'","")}}</div>
+			<div>封面位置y：{{data[9]}}</div>
+			
+		</div>
+		
+	{% endif %}
+</div>
+{% endblock %}

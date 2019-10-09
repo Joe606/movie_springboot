@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+	<head>
+		<meta name="referrer" content="never">
+		<meta charset="utf-8">
+		<title>美丽电影</title>
+		<style type="text/css">
+			body{background-color:rgb(100,140,100);}
+			header{
+				color:rgb(220,180,180);
+				text-align: center;
+				font-size: 50px;
+			}
+			form{
+				border:0px;
+				border-style: solid;
+			
+				font-size: 17px;
+				margin-top: 10px;
+				margin-bottom: 10px;
+				margin-left: 90px;
+				margin-right:0px;
+
+			}
+			input{font-size: 10px;}
+			.fm{
+				border-style: solid;
+				border:10px;
+				float:left;
+				width: 50%;
+				
+			}
+			img{
+				padding: 20px 0;
+				width: 300px;
+				height: 400px;
+				display: block;
+				margin: auto;
+			}
+			#fm2{
+				padding: 140px 0;
+				text-align: center;
+			}
+			.mv{
+				height: 80px;
+				clear: both;
+			}
+
+		</style>
+		<script type="text/javascript">
+			function change_color(){
+				
+					document.getElementById('bb').style.background-color='red';
+				
+			}
+
+		</script>
+	</head>
+	<body id='bb' onclick="change_color()">
+		<header style=" ">多姿多彩的电影世界</header>
+		<section class="a">
+			<form method='post'>
+				请输入电影名字：<input type="text" name="movie_name">
+			<input type="submit" name="提交">
+			</form>
+			
+		</section>
+
+			
+		<section class="b">
+			{% block content %}
+			{% endblock %}
+			
+		</section>
+
+	</body>
+
+</html>
