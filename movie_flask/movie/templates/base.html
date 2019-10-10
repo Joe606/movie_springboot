@@ -45,7 +45,23 @@
 				height: 80px;
 				clear: both;
 			}
+			/*浏览器屏幕变小时，两列布局变为上下布局*/
+			@media screen and (max-width: 600px) {
+  			.fm {
+    			width: 100%;
+  				}
+			}
+			footer{
+				text-align: center;
+				color:rgb(90,90,90);
+				/*border: solid;
+				margin-bottom: 10px;
+				border-top: dashed;
+				background-color: black;
+				color: red;
+				height: 2px;*/
 
+			}
 		</style>
 		<script type="text/javascript">
 			function change_color(){
@@ -72,7 +88,7 @@
 			{% endblock %}
 			
 		</section>
-
+		<footer>温馨提示：如若查不到，便是未收录。</footer>
 	</body>
 
 </html>
