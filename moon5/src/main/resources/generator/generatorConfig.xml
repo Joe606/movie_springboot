@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <context id="context1" targetRuntime="MyBatis3">
+    
+     <!-- 是否删除在生成文件中加入注释说明 -->
+    <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+    </commentGenerator>
+   
+    
+    <!-- 数据库链接url -->
+    <jdbcConnection connectionURL="jdbc:mysql://49.232.154.41:3306/douban_movie" driverClass="com.mysql.cj.jdbc.Driver" password="" userId="root" />
+    
+    <javaTypeResolver>
+		<property name="forceBigDecimals" value="false"/>
+	</javaTypeResolver>
+    <!-- 生成的模型model/entity包名与文件放置路径 -->
+    <javaModelGenerator targetPackage="com.sun5.moon5.model" targetProject="moon5/src/main/java">
+    </javaModelGenerator>
+            
+    <!-- 生成的映射文件的包名与放置位置 -->
+    <sqlMapGenerator targetPackage="com.sun5.moon5.mapper" targetProject="moon5/src/main/java"></sqlMapGenerator>
+    <!-- 生成dao接口文件的包名与放置位置 -->
+    <javaClientGenerator targetPackage="com.sun5.moon5.dao" targetProject="moon5/src/main/java" type="XMLMAPPER" />
+    <!-- 数据源表格名称tablename，domainObjectName对应的实体类/模型类model/entity名，以及不生成example文件 -->
+    <table tableName="movie_2" domainObjectName="Movie" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+    </table>
+  </context>
+</generatorConfiguration>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sun5.moon5.dao.MovieMapper">
+  <resultMap id="BaseResultMap" type="com.sun5.moon5.model.Movie">
+    <id column="num" jdbcType="INTEGER" property="num" />
+    <result column="directors" jdbcType="VARCHAR" property="directors" />
+    <result column="rate" jdbcType="VARCHAR" property="rate" />
+    <result column="cover_x" jdbcType="VARCHAR" property="coverX" />
+    <result column="star" jdbcType="VARCHAR" property="star" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="casts" jdbcType="VARCHAR" property="casts" />
+    <result column="cover" jdbcType="VARCHAR" property="cover" />
+    <result column="id" jdbcType="VARCHAR" property="id" />
+    <result column="cover_y" jdbcType="VARCHAR" property="coverY" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    num, directors, rate, cover_x, star, title, url, casts, cover, id, cover_y
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from movie_2
+    where num = #{num,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from movie_2
+    where num = #{num,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.sun5.moon5.model.Movie">
+    insert into movie_2 (num, directors, rate, 
+      cover_x, star, title, 
+      url, casts, cover, 
+      id, cover_y)
+    values (#{num,jdbcType=INTEGER}, #{directors,jdbcType=VARCHAR}, #{rate,jdbcType=VARCHAR}, 
+      #{coverX,jdbcType=VARCHAR}, #{star,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{url,jdbcType=VARCHAR}, #{casts,jdbcType=VARCHAR}, #{cover,jdbcType=VARCHAR}, 
+      #{id,jdbcType=VARCHAR}, #{coverY,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sun5.moon5.model.Movie">
+    insert into movie_2
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="num != null">
+        num,
+      </if>
+      <if test="directors != null">
+        directors,
+      </if>
+      <if test="rate != null">
+        rate,
+      </if>
+      <if test="coverX != null">
+        cover_x,
+      </if>
+      <if test="star != null">
+        star,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="casts != null">
+        casts,
+      </if>
+      <if test="cover != null">
+        cover,
+      </if>
+      <if test="id != null">
+        id,
+      </if>
+      <if test="coverY != null">
+        cover_y,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="num != null">
+        #{num,jdbcType=INTEGER},
+      </if>
+      <if test="directors != null">
+        #{directors,jdbcType=VARCHAR},
+      </if>
+      <if test="rate != null">
+        #{rate,jdbcType=VARCHAR},
+      </if>
+      <if test="coverX != null">
+        #{coverX,jdbcType=VARCHAR},
+      </if>
+      <if test="star != null">
+        #{star,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="casts != null">
+        #{casts,jdbcType=VARCHAR},
+      </if>
+      <if test="cover != null">
+        #{cover,jdbcType=VARCHAR},
+      </if>
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="coverY != null">
+        #{coverY,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sun5.moon5.model.Movie">
+    update movie_2
+    <set>
+      <if test="directors != null">
+        directors = #{directors,jdbcType=VARCHAR},
+      </if>
+      <if test="rate != null">
+        rate = #{rate,jdbcType=VARCHAR},
+      </if>
+      <if test="coverX != null">
+        cover_x = #{coverX,jdbcType=VARCHAR},
+      </if>
+      <if test="star != null">
+        star = #{star,jdbcType=VARCHAR},
+      </if>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="casts != null">
+        casts = #{casts,jdbcType=VARCHAR},
+      </if>
+      <if test="cover != null">
+        cover = #{cover,jdbcType=VARCHAR},
+      </if>
+      <if test="id != null">
+        id = #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="coverY != null">
+        cover_y = #{coverY,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where num = #{num,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sun5.moon5.model.Movie">
+    update movie_2
+    set directors = #{directors,jdbcType=VARCHAR},
+      rate = #{rate,jdbcType=VARCHAR},
+      cover_x = #{coverX,jdbcType=VARCHAR},
+      star = #{star,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      casts = #{casts,jdbcType=VARCHAR},
+      cover = #{cover,jdbcType=VARCHAR},
+      id = #{id,jdbcType=VARCHAR},
+      cover_y = #{coverY,jdbcType=VARCHAR}
+    where num = #{num,jdbcType=INTEGER}
+  </update>
+</mapper>

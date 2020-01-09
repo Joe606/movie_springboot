@@ -1,0 +1,42 @@
+@charset "UTF-8";
+/*三段式 */
+/*头部，条状，灰色 */
+body{
+	margin:0px;
+	background-color:green;
+}
+h1 {
+	margin:0px;
+	margin-bottom:11px;
+	margin-left:0px;d
+	padding-top:0px;
+	padding-left:0px;
+	border-width:0px;
+	height:50px;
+	text-align:center;
+	color:yellow;
+	background-color:grey;
+}
+/*身体，块状，黑色 */
+p{
+	height:20px;
+	text-align:center;
+	color:rgb(0,0,0);
+	background-color:rgb(200,110,0);
+}
+img{
+	background-color:green;
+	margin-left: 525px;
+}
+/*尾部，条状，灰色 */
+footer {
+	text-align:center;
+	color:white;
+	background-color:grey;
+}
+
+div{
+	margin-top:0px;
+	float: left;
+}
+

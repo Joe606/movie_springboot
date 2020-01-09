@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/*三段式 */
+/*头部，条状，灰色 */
+h1 {
+	text-align:center;
+	color:yellow;
+	background-color:grey;
+}
+/*身体，块状，黑色 */
+p{
+	text-align:center;
+	color:black;
+	background-color:black;
+}
+/*尾部，条状，灰色 */
+footer:active {
+	text-align:center;
+	color:white;
+	background-color:grey;
+}
